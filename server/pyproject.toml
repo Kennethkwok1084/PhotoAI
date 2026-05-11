@@ -1,0 +1,40 @@
+[project]
+name = "photoai-server"
+version = "0.1.0"
+description = "PhotoAI backend P0 service"
+readme = "README.md"
+requires-python = ">=3.13,<3.15"
+dependencies = [
+    "alembic>=1.15.0",
+    "bcrypt>=4.2.1",
+    "email-validator>=2.2.0",
+    "fastapi>=0.115.8",
+    "psycopg[binary]>=3.2.5",
+    "pydantic-settings>=2.7.1",
+    "pyjwt>=2.10.1",
+    "python-multipart>=0.0.20",
+    "redis>=5.2.1",
+    "sqlalchemy>=2.0.38",
+    "uvicorn[standard]>=0.34.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "httpx>=0.28.1",
+    "pytest>=8.3.4",
+    "pytest-cov>=6.0.0",
+]
+
+[project.scripts]
+photoai-init-storage = "app.cli:init_storage_command"
+
+[tool.hatch.build.targets.wheel]
+packages = ["app"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

@@ -1,0 +1,2 @@
+"""PhotoAI backend package."""
+

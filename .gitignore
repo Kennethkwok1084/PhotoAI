@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
@@ -216,3 +217,23 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+=======
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Virtual environments and tool caches
+.venv/
+.uv-cache/
+.tmp/
+
+# Local deploy data
+deploy/data/
+
+# Local env files
+.env
+server/.env
+>>>>>>> 7d8c6ae (Refactor code structure for improved readability and maintainability)
