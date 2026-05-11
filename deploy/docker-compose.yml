@@ -6,7 +6,7 @@ services:
       POSTGRES_USER: photoai
       POSTGRES_PASSWORD: photoai_password
     ports:
-      - "5432:5432"
+      - "54329:5432"
     volumes:
       - ./data/postgres:/var/lib/postgresql/data
     healthcheck:
@@ -19,7 +19,7 @@ services:
   redis:
     image: redis:7-alpine
     ports:
-      - "6379:6379"
+      - "16379:6379"
     volumes:
       - ./data/redis:/data
     restart: unless-stopped
@@ -35,7 +35,7 @@ services:
       - ../server:/app
       - ./data/photoai:/data/photoai
     ports:
-      - "8080:8080"
+      - "8880:8080"
     command: ["uv", "run", "uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8080", "--reload"]
     depends_on:
       postgres:
